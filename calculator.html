@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            font-size: 40px;
+            width: 204px;
+            background: black;
+            display: grid;
+            column-gap: 2px;
+            padding: 1rem;
+            row-gap: 2px;
+            text-align: center;
+            grid-template-columns: 50px 50px 50px 50px;
+            grid-template-rows: 50px 50px;
+        }
+        .d1 {
+            grid-column: 1 / span 4;
+            color: white;
+            background-color: black;
+            text-align: center;
+        }
+        .d2 {
+            grid-column: 1 /span 4;
+            color: lightgray;
+            background-color: red;
+            text-align: center;
+        }
+        .d3 {
+            color: lightgray;
+            background-color: dimgray;
+        }
+        .d4 {
+            color: lightgray;
+            background-color: dimgray;
+        }
+        .d5 {
+            color: lightgray;
+            background-color: dimgray;
+        }
+        .d6 {
+            color: lightgray;
+            background-color: dimgray;
+        }
+        .d7 {
+            color: lightgray;
+            background-color: dimgray;
+        }
+        .d8 {
+            color: lightgray;
+            background-color: dimgray;
+        }
+        .d9 {
+            color: lightgray;
+            background-color: dimgray;
+        }
+        .d10 {
+            color: lightgray;
+            background-color: dimgray;
+        }
+        .d11 {
+            color: lightgray;
+            background-color: dimgray;
+        }
+        .d12 {
+            color: lightgray;
+            background-color: dimgray;
+        }
+        .d13 {
+            color: lightgray;
+            background-color: dimgray;
+        }
+        .d14 {
+            color: lightgray;
+            background-color: dimgray;
+        }
+        .d15 {
+            color: lightgray;
+            background-color: dimgray;
+        }
+        .d16 {
+            color: lightgray;
+            background-color: dimgray;
+        }
+        .d17 {
+        color: lightgray;
+        background-color: Green;
+        }
+        .d18{
+        color: lightgray;
+        background-color: dimgray;
+        }
+    </style>
+</head>
+<body>
+  <script>
+//creating the visual layout of the calculator
+    var body = document.getElementsByTagName('BODY')[0];
+
+    var container = document.createElement('div');
+    container.classList.add('container');   
+
+    var display = document.createElement('div');
+    display.classList.add('d1');
+    display.classList.add('button');
+    display.textContent = 'DISPLAY';
+
+    var clearButton = document.createElement('div');
+    clearButton.classList.add('d2');
+    clearButton.classList.add('button');
+    clearButton.textContent = 'C';
+
+    var no1 = document.createElement('div');
+    no1.classList.add('d3');
+    no1.classList.add('button');   
+    no1.textContent = 1;
+
+    var no2 = document.createElement('div');
+    no2.classList.add('d4');
+    no2.classList.add('button');   
+    no2.textContent = 2;
+
+    var no3 = document.createElement('div');
+    no3.classList.add('d5');
+    no3.classList.add('button');   
+    no3.textContent = 3;
+
+    var plus = document.createElement('div');
+    plus.classList.add('d6');
+    plus.classList.add('button');   
+    plus.textContent = '+';
+
+    var no4 = document.createElement('div');
+    no4.classList.add('d7');
+    no4.classList.add('button');   
+    no4.textContent = 4;
+
+    var no5 = document.createElement('div');
+    no5.classList.add('d8');
+    no5.classList.add('button');   
+    no5.textContent = 5;
+
+    var no6 = document.createElement('div');
+    no6.classList.add('d9');
+    no6.classList.add('button');
+    no6.textContent = 6;
+
+    var minus = document.createElement('div');
+    minus.classList.add('d10');
+    minus.classList.add('button');
+    minus.textContent = '-';
+
+    var no7 = document.createElement('div');
+    no7.classList.add('d11');
+    no7.classList.add('button');
+    no7.textContent = 7;
+
+    var no8 = document.createElement('div');
+    no8.classList.add('d12');
+    no8.classList.add('button');
+    no8.textContent = 8;
+
+    var no9 = document.createElement('div');
+    no9.classList.add('d13');
+    no9.classList.add('button');
+    no9.textContent = 9;
+
+    var multiply = document.createElement('div');
+    multiply.classList.add('d14');
+    multiply.classList.add('button');
+    multiply.textContent = '×';
+
+    var decimal = document.createElement('div');
+    decimal.classList.add('d15');   
+    decimal.classList.add('button');   
+    decimal.textContent = '.';
+
+    var no0 = document.createElement('div');
+    no0.classList.add('d16');
+    no0.classList.add('button');
+    no0.textContent = 0;
+
+    var equals = document.createElement('div');
+    equals.classList.add('d17');
+    equals.classList.add('button');
+    equals.textContent = '=';
+
+    var divide = document.createElement('div');
+    divide.classList.add('d18');
+    divide.classList.add('button');
+    divide.textContent = '÷';
+
+    body.appendChild(container);
+    container.appendChild(display);
+    container.appendChild(clearButton);
+    container.appendChild(no1);
+    container.appendChild(no2);
+    container.appendChild(no3);
+    container.appendChild(plus);
+    container.appendChild(no4);
+    container.appendChild(no5);
+    container.appendChild(no6);
+    container.appendChild(minus);
+    container.appendChild(no7);
+    container.appendChild(no8);
+    container.appendChild(no9);
+    container.appendChild(multiply);
+    container.appendChild(decimal);
+    container.appendChild(no0);
+    container.appendChild(equals);
+    container.appendChild(divide);
+  </script>
+</body>
+</html>
