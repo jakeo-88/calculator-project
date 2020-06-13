@@ -114,81 +114,97 @@
     no1.classList.add('d3');
     no1.classList.add('button');   
     no1.textContent = 1;
+    no1.value = 1;
 
     var no2 = document.createElement('div');
     no2.classList.add('d4');
     no2.classList.add('button');   
     no2.textContent = 2;
+    no2.value = 2;
 
     var no3 = document.createElement('div');
     no3.classList.add('d5');
     no3.classList.add('button');   
     no3.textContent = 3;
+    no3.value = 3;
 
     var plus = document.createElement('div');
     plus.classList.add('d6');
     plus.classList.add('button');   
     plus.textContent = '+';
+    plus.value = '+';
 
     var no4 = document.createElement('div');
     no4.classList.add('d7');
     no4.classList.add('button');   
     no4.textContent = 4;
+    no4.value = 4;
 
     var no5 = document.createElement('div');
     no5.classList.add('d8');
     no5.classList.add('button');   
     no5.textContent = 5;
+    no5.value = 5;
 
     var no6 = document.createElement('div');
     no6.classList.add('d9');
     no6.classList.add('button');
     no6.textContent = 6;
+    no6.value = 6;
 
     var minus = document.createElement('div');
     minus.classList.add('d10');
     minus.classList.add('button');
     minus.textContent = '-';
+    minus.value = '-';
 
     var no7 = document.createElement('div');
     no7.classList.add('d11');
     no7.classList.add('button');
     no7.textContent = 7;
+    no7.value = 7;
 
     var no8 = document.createElement('div');
     no8.classList.add('d12');
     no8.classList.add('button');
     no8.textContent = 8;
+    no8.value = 8;
 
     var no9 = document.createElement('div');
     no9.classList.add('d13');
     no9.classList.add('button');
     no9.textContent = 9;
+    no9.value = 9;
 
     var multiply = document.createElement('div');
     multiply.classList.add('d14');
     multiply.classList.add('button');
     multiply.textContent = '×';
+    multiply.value = '×';
 
     var decimal = document.createElement('div');
     decimal.classList.add('d15');   
     decimal.classList.add('button');   
     decimal.textContent = '.';
+    decimal.value = '.';
 
     var no0 = document.createElement('div');
     no0.classList.add('d16');
     no0.classList.add('button');
     no0.textContent = 0;
+    no0.value = 0;
 
     var equals = document.createElement('div');
     equals.classList.add('d17');
     equals.classList.add('button');
     equals.textContent = '=';
+    equals.value = '=';
 
     var divide = document.createElement('div');
     divide.classList.add('d18');
     divide.classList.add('button');
     divide.textContent = '÷';
+    divide.value = '÷';
 
     body.appendChild(container);
     container.appendChild(display);
@@ -209,6 +225,14 @@
     container.appendChild(no0);
     container.appendChild(equals);
     container.appendChild(divide);
+
+    //assign button values to buttons
+    var buttons = document.querySelectorAll('div.button');
+        buttons.forEach((button) => {
+            button.addEventListener('click', (e) => {
+                display.textContent = button.value;
+            });
+        });
   </script>
 </body>
 </html>
