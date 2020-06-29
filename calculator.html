@@ -233,6 +233,11 @@
                 display.textContent = button.value;
             });
         });
+
+    //add listener for the clear button to remove any variables in the display
+    clearButton.addEventListener('click', (e) => {
+        display.textContent = '';
+    });
   </script>
 </body>
 </html>
