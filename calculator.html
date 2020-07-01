@@ -227,16 +227,24 @@
     container.appendChild(divide);
 
     //assign button values to buttons
+    var var0 = '';
+    var var1 = [];
+    
     var buttons = document.querySelectorAll('div.button');
         buttons.forEach((button) => {
             button.addEventListener('click', (e) => {
-                display.textContent = button.value;
+                
+                var1.push(button.value); //adds variables when buttons are pressed
+                var1Combo = var1.join(''); //combines variables from calculator
+                var1Number = Number(var1Combo); //converts combined variables from a string to a number
+                display.textContent = var1Number; //displays selected numbers and decimal on the display
             });
         });
 
     //add listener for the clear button to remove any variables in the display
     clearButton.addEventListener('click', (e) => {
-        display.textContent = '';
+        display.textContent = var0;
+        var1 = []; //resets the display value for next input
     });
   </script>
 </body>
