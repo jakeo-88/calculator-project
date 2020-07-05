@@ -293,19 +293,19 @@
     
         if(operation === '+') {
             result = add(var1, var2No);
-            display.textContent = result;
+            display.textContent = Math.round(result);
             var1 = result;
             displayVarNumber = result;
             var2 = [];
         }else if(operation === '-') {
             result = subtract(var1, var2No);
-            display.textContent = result;
+            display.textContent = Math.round(result);
             var1 = result;
             displayVarNumber = result;
             var2 = [];
         }else if(operation === '×') {
             result = multiply(var1, var2No);
-            display.textContent = result;
+            display.textContent = Math.round(result);
             var1 = result;
             displayVarNumber = result;
             var2 = [];
@@ -313,7 +313,7 @@
             display.textContent = "ERROR!";    
         }else if(operation === '/') {
             result = divide(var1, var2No);
-            display.textContent = result;
+            display.textContent = Math.round(result);
             var1 = result;
             displayVarNumber = result;
             var2 = [];
