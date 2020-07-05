@@ -107,7 +107,6 @@
 
     var clearButton = document.createElement('div');
     clearButton.classList.add('d2');
-    clearButton.classList.add('button');
     clearButton.textContent = 'C';
 
     var no1 = document.createElement('div');
@@ -248,7 +247,7 @@
     var displayVarNumber;
     var result;
     
-    var buttons = document.querySelectorAll('div.button');
+    var buttons = document.querySelectorAll('div.variable');
         buttons.forEach((button) => {
             button.addEventListener('click', (e) => {
                 
@@ -311,7 +310,7 @@
             displayVarNumber = result;
             var2 = [];
         }else if(operation === '/' && var2No === 0) {
-            display.textContent = "Cannot divide by zero!";    
+            display.textContent = "ERROR!";    
         }else if(operation === '/') {
             result = divide(var1, var2No);
             display.textContent = result;
