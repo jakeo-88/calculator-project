@@ -112,19 +112,22 @@
 
     var no1 = document.createElement('div');
     no1.classList.add('d3');
-    no1.classList.add('button');   
+    no1.classList.add('button');
+    no1.classList.add('variable');  
     no1.textContent = 1;
     no1.value = 1;
 
     var no2 = document.createElement('div');
     no2.classList.add('d4');
-    no2.classList.add('button');   
+    no2.classList.add('button');
+    no2.classList.add('variable'); 
     no2.textContent = 2;
     no2.value = 2;
 
     var no3 = document.createElement('div');
     no3.classList.add('d5');
-    no3.classList.add('button');   
+    no3.classList.add('button');
+    no3.classList.add('variable');
     no3.textContent = 3;
     no3.value = 3;
 
@@ -136,19 +139,22 @@
 
     var no4 = document.createElement('div');
     no4.classList.add('d7');
-    no4.classList.add('button');   
+    no4.classList.add('button');
+    no4.classList.add('variable');  
     no4.textContent = 4;
     no4.value = 4;
 
     var no5 = document.createElement('div');
     no5.classList.add('d8');
-    no5.classList.add('button');   
+    no5.classList.add('button');
+    no5.classList.add('variable');   
     no5.textContent = 5;
     no5.value = 5;
 
     var no6 = document.createElement('div');
     no6.classList.add('d9');
     no6.classList.add('button');
+    no6.classList.add('variable');
     no6.textContent = 6;
     no6.value = 6;
 
@@ -161,18 +167,21 @@
     var no7 = document.createElement('div');
     no7.classList.add('d11');
     no7.classList.add('button');
+    no7.classList.add('variable');
     no7.textContent = 7;
     no7.value = 7;
 
     var no8 = document.createElement('div');
     no8.classList.add('d12');
     no8.classList.add('button');
+    no8.classList.add('variable');
     no8.textContent = 8;
     no8.value = 8;
 
     var no9 = document.createElement('div');
     no9.classList.add('d13');
     no9.classList.add('button');
+    no9.classList.add('variable');
     no9.textContent = 9;
     no9.value = 9;
 
@@ -184,13 +193,15 @@
 
     var decimal = document.createElement('div');
     decimal.classList.add('d15');   
-    decimal.classList.add('button');   
+    decimal.classList.add('button');
+    decimal.classList.add('variable');   
     decimal.textContent = '.';
     decimal.value = '.';
 
     var no0 = document.createElement('div');
     no0.classList.add('d16');
     no0.classList.add('button');
+    no0.classList.add('variable');
     no0.textContent = 0;
     no0.value = 0;
 
@@ -229,22 +240,108 @@
     //assign button values to buttons
     var var0 = '';
     var var1 = [];
+    var operation = '';
+    var var2 = [];
+    var var2No;
+    var displayVar = var1;
+    var displayVarCombo;
+    var displayVarNumber;
+    var result;
     
     var buttons = document.querySelectorAll('div.button');
         buttons.forEach((button) => {
             button.addEventListener('click', (e) => {
                 
-                var1.push(button.value); //adds variables when buttons are pressed
-                var1Combo = var1.join(''); //combines variables from calculator
-                var1Number = Number(var1Combo); //converts combined variables from a string to a number
-                display.textContent = var1Number; //displays selected numbers and decimal on the display
+                displayVar.push(button.value); //adds variables when buttons are pressed
+                displayVarCombo = displayVar.join(''); //combines variables from calculator
+                displayVarNumber = Number(displayVarCombo); //converts combined variables from a string to a number
+                display.textContent = displayVarNumber; //displays selected numbers and decimal on the display
             });
         });
+
+    //add listener for operations used on calculator
+    plus.addEventListener('click', (event) => {
+        display.textContent = '+';
+        var1 = displayVarNumber; 
+        displayVar = var2;
+        operation = '+';
+    });
+
+    minus.addEventListener('click', (event) => {
+        display.textContent = '-';
+        var1 = displayVarNumber; 
+        displayVar = var2;
+        operation = '-';
+    });
+
+    multiply.addEventListener('click', (event) => {
+        display.textContent = '×';
+        var1 = displayVarNumber; 
+        displayVar = var2;
+        operation = '×';
+    });
+
+    divide.addEventListener('click', (event) => {
+        display.textContent = '÷';
+        var1 = displayVarNumber; 
+        displayVar = var2;
+        operation = '/'
+    });
+
+    equals.addEventListener('click', (event) => {
+  
+        var2No = displayVarNumber;//change second variable into a number
+    
+        if(operation === '+') {
+            result = add(var1, var2No);
+            display.textContent = result;
+            var1 = result;
+            displayVarNumber = result;
+            var2 = [];
+        }else if(operation === '-') {
+            result = subtract(var1, var2No);
+            display.textContent = result;
+            var1 = result;
+            displayVarNumber = result;
+            var2 = [];
+        }else if(operation === '×') {
+            result = multiply(var1, var2No);
+            display.textContent = result;
+            var1 = result;
+            displayVarNumber = result;
+            var2 = [];
+        }else if(operation === '/' && var2No === 0) {
+            display.textContent = "Cannot divide by zero!";    
+        }else if(operation === '/') {
+            result = divide(var1, var2No);
+            display.textContent = result;
+            var1 = result;
+            displayVarNumber = result;
+            var2 = [];
+        }
+        
+        function add(var1, var2No) {
+            return var1 + var2No;
+        }
+        function subtract(var1, var2No) {
+            return var1 - var2No;
+        }
+        function multiply(var1, var2No) {
+            return var1 * var2No;
+        }
+        function divide(var1, var2No) {
+            return var1 / var2No;
+        }
+        
+    });
 
     //add listener for the clear button to remove any variables in the display
     clearButton.addEventListener('click', (e) => {
         display.textContent = var0;
         var1 = []; //resets the display value for next input
+        operation = '';
+        var2 = [];
+        displayVar = [];
     });
   </script>
 </body>
